@@ -1,0 +1,14 @@
+
+<div class="jumbotron" style="height:95vh;">
+		<div class="container text-center">
+				<h1>Welcome#index</h1>
+				<p>Find me in app/views/welcome/index.html.erb</p> <br/><br/><br/>
+
+				<%=link_to "Documentation for Admin", {controller: "documentation",role: "Admin"}, target: "ext", method: :get %> <br/><br/><br/>
+				<%=link_to "Documentation for Manager", {controller: "documentation",role: "Manager"}, target: "ext", method: :get %> <br/><br/><br/>
+				<%=link_to "Documentation for TeleCaller", {controller: "documentation",role: "TeleCaller"}, target: "ext", method: :get %> <br/><br/><br/>
+				<%=link_to "Head to Documentation", {controller: "documentation"}, target: "ext"%> <br/><br/><br/>
+		</div>
+</div>
+
+
