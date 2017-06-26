@@ -10,9 +10,8 @@
 				<%=link_to "Head to Documentation", {controller: "documentation"}, target: "ext"%> <br/><br/><br/>
 
 				<form role="form" method="POST" action="/saveFile">
-					<textarea name="file_data" class="form-control">
-						
-					</textarea>
+					<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+					<textarea name="file_data" class="form-control"></textarea>
 					<button type="submit" class="btn btn-primary">SAVE</button>
 				</form>
 		</div>
