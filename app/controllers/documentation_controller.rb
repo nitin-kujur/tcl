@@ -15,7 +15,10 @@ class DocumentationController < ApplicationController
   def saveFile
     require 'open-uri'
 
-    open("#{Rails.root}/public/uploads/temp.csv", 'wb') do |file|
+    path = File.join Rails.root, 'public', 'uploads'
+
+    FileUtils.mkdir_p(path) unless File.exist?(path) 
+    open(File.join(path, 'temp.cs'), 'wb') do |file|
       file << open(params[:file_data]).read
     end
     # begin
