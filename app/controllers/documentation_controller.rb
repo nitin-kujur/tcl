@@ -15,9 +15,22 @@ class DocumentationController < ApplicationController
   def saveFile
     require 'open-uri'
 
-    open('temp.csv', 'wb') do |file|
+    open("#{Rails.root}/public/uploads/temp.csv", 'wb') do |file|
       file << open(params[:file_data]).read
     end
+    begin
+      send_file 'temp.csv'
+    rescue
+      csv
+    end
   end
-  send_file 'temp.csv'
+  
+
+  def csv
+     file_name = 'temp.csv'
+     @filename ="#{Rails.root}/public/uploads/#{file_name}"
+     send_file(@filename ,
+      :type => 'text/csv',
+      :disposition => 'attachment')           
+  end
 end
