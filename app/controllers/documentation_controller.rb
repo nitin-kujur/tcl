@@ -13,25 +13,24 @@ class DocumentationController < ApplicationController
   end
 
   def saveFile
-    require 'open-uri'
     require 'base64'
 
     path = File.join Rails.root, 'public', 'uploads'
+    uri = params[:file_data]
+    data = uri.split(',')[1]
 
     FileUtils.mkdir_p(path) unless File.exist?(path) 
-    # open(File.join(path, 'temp.cs'), 'wb') do |file|
-    #   file << open(params[:file_data]).read
-    # end
 
     File.open(File.join(path, 'temp.csv'), 'wb') do |file|
-      file.write(Base64.decode64(params[:file_data].split(',')[1]))
+      if uri.include?('base64')
+        file.write(Base64.decode64(data))
+      else
+        file.write(data)
+      end
     end
-    # begin
-    #   send_file 'temp.csv'
-    # rescue
-      csv
-    # end
-    # render nothing: true
+     
+    csv
+    
   end
   
 

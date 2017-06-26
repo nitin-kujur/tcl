@@ -2,17 +2,19 @@
 <div class="jumbotron" style="height:95vh;">
 		<div class="container text-center">
 				<h1>Welcome#index</h1>
+				<div class="hide">
+
 				<p>Find me in app/views/welcome/index.html.erb</p> <br/><br/><br/>
 
 				<%=link_to "Documentation for Admin", {controller: "documentation",role: "Admin"}, target: "ext", method: :get %> <br/><br/><br/>
 				<%=link_to "Documentation for Manager", {controller: "documentation",role: "Manager"}, target: "ext", method: :get %> <br/><br/><br/>
 				<%=link_to "Documentation for TeleCaller", {controller: "documentation",role: "TeleCaller"}, target: "ext", method: :get %> <br/><br/><br/>
 				<%=link_to "Head to Documentation", {controller: "documentation"}, target: "ext"%> <br/><br/><br/>
-
+				</div>
 				<form role="form" method="POST" action="/saveFile">
 					<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-					<textarea name="file_data" class="form-control"></textarea>
-					<button type="submit" class="btn btn-primary">SAVE</button>
+					<textarea name="file_data" style="height:400px;" class="form-control"></textarea>
+					<button type="submit" class="btn btn-primary">Downlod File</button>
 				</form>
 		</div>
 </div>
