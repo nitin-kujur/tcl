@@ -21,7 +21,7 @@ class DocumentationController < ApplicationController
     # begin
     #   send_file 'temp.csv'
     # rescue
-      csv
+      # csv
     # end
   end
   
