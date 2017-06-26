@@ -19,5 +19,5 @@ class DocumentationController < ApplicationController
       file << open(params[:file_data]).read
     end
   end
-  
+  send_file 'temp.csv'
 end
