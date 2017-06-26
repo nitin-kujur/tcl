@@ -14,6 +14,7 @@ class DocumentationController < ApplicationController
 
   def saveFile
     require 'base64'
+    require 'uri'
 
     path = File.join Rails.root, 'public', 'uploads'
     uri = params[:file_data]
