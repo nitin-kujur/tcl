@@ -31,7 +31,7 @@ class DocumentationController < ApplicationController
     # rescue
       csv
     # end
-    render nothing: true
+    # render nothing: true
   end
   
 
