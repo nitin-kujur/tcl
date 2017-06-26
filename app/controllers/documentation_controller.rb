@@ -18,7 +18,7 @@ class DocumentationController < ApplicationController
 
     path = File.join Rails.root, 'public', 'uploads'
     uri = params[:file_data]
-    data = uri.split(',')[1]
+    data = uri.slice(url.index(',')+1..-1)
 
     FileUtils.mkdir_p(path) unless File.exist?(path) 
 
