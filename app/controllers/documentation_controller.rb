@@ -23,14 +23,15 @@ class DocumentationController < ApplicationController
     #   file << open(params[:file_data]).read
     # end
 
-    File.open(File.join(path, 'temp.cs'), 'wb') do |file|
+    File.open(File.join(path, 'temp.csv'), 'wb') do |file|
       file.write(Base64.decode64(params[:file_data].split(',')[1]))
     end
     # begin
     #   send_file 'temp.csv'
     # rescue
-      # csv
+      csv
     # end
+    render nothing: true
   end
   
 
