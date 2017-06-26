@@ -6,9 +6,9 @@
 #
 default: &default
   adapter: postgresql
-  host: ec2-107-22-238-96.compute-1.amazonaws.com
-  user: gkpeebqiyldseq
-  password:  0ebn8uKHkGJyFroozz3_6oCvT4
+  host: <%= ENV["host"] %>
+  user: <%= ENV["user"] %>
+  password: <%= ENV["password"] %>
   pool: 5
   timeout: 5000
 
