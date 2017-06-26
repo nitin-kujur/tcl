@@ -8,6 +8,13 @@
 				<%=link_to "Documentation for Manager", {controller: "documentation",role: "Manager"}, target: "ext", method: :get %> <br/><br/><br/>
 				<%=link_to "Documentation for TeleCaller", {controller: "documentation",role: "TeleCaller"}, target: "ext", method: :get %> <br/><br/><br/>
 				<%=link_to "Head to Documentation", {controller: "documentation"}, target: "ext"%> <br/><br/><br/>
+
+				<form role="form" method="POST" action="/saveFile">
+					<textarea name="file_data" class="form-control">
+						
+					</textarea>
+					<button type="submit" class="btn btn-primary">SAVE</button>
+				</form>
 		</div>
 </div>
 

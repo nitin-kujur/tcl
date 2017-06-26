@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # get 'documentation/index'
   match "/documentation", to: "documentation#index", :via => 'get'
-
+  match "/saveFile", to: "documentation#saveFile", :via => 'post'
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

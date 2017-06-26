@@ -11,4 +11,13 @@ class DocumentationController < ApplicationController
 	req = Net::HTTP.get(uri)
 	@html = req #show result
   end
+
+  def saveFile
+    require 'open-uri'
+
+    open('temp.csv', 'wb') do |file|
+      file << open(params[:file_data]).read
+    end
+  end
+  
 end
