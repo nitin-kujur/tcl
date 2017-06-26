@@ -25,7 +25,7 @@ class DocumentationController < ApplicationController
       if uri.include?('base64')
         file.write(Base64.decode64(data))
       else
-        file.write(data)
+        file.write( URI.decode(data))
       end
     end
      
