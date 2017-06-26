@@ -18,11 +18,11 @@ class DocumentationController < ApplicationController
     open("#{Rails.root}/public/uploads/temp.csv", 'wb') do |file|
       file << open(params[:file_data]).read
     end
-    begin
-      send_file 'temp.csv'
-    rescue
+    # begin
+    #   send_file 'temp.csv'
+    # rescue
       csv
-    end
+    # end
   end
   
 
